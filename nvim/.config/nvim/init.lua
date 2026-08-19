@@ -3,5 +3,4 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("config") -- Load all config first
-
 require("plugins") -- Load all plugins
