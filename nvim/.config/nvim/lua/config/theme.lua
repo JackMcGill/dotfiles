@@ -4,5 +4,8 @@ vim.pack.add({
 	"https://github.com/olimorris/onedarkpro.nvim",
 })
 
-vim.cmd.colorscheme("onedark_dark")
--- vim.cmd.colorscheme("kanagawa")
+
+vim.g.moonflyItalics = false -- disable italics
+
+-- activate the scheme
+vim.cmd.colorscheme("moonfly")
