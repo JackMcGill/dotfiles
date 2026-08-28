@@ -11,6 +11,7 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 -- File
 vim.o.undofile = true
 vim.o.autoread = true
+vim.opt.backupcopy = "yes"
 
 -- Visual
 vim.opt.cursorline = true -- Highlight current line

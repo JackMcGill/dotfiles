@@ -5,12 +5,14 @@ vim.pack.add({
 require("snacks").setup({
 	picker = {
 		enabled = true,
-		layout = {
-			backdrop = false,
-		},
-		source = {
+		sources = {
 			files = {
 				hidden = true,
+			},
+		},
+		icons = {
+			files = {
+				enabled = true,
 			},
 		},
 	},

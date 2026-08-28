@@ -31,7 +31,13 @@ map("n", "<leader>ff", function()
 end, { desc = "Find Files" })
 map("n", "<leader>fg", function()
 	Snacks.picker.grep()
-end, { desc = "Grep" })
+end, { desc = "Global grep" })
+vim.keymap.set("n", "<leader>fr", function()
+	Snacks.picker.recent()
+end, { desc = "Recent Files" })
+vim.keymap.set("n", "<leader>fb", function()
+	Snacks.picker.buffers()
+end, { desc = "Buffers" })
 
 -- ═══════════════════════════════════════════════════════════
 -- WINDOW MANAGEMENT
