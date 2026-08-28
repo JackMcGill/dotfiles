@@ -62,6 +62,7 @@ map("i", ";", ";<c-g>u")
 
 -- Saving
 map("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
+map("n", "<leader>W", "<cmd>wall<CR>", { desc = "Save file all files" })
 
 -- Diagnostics
 vim.keymap.set("n", "<leader>cd", function()
