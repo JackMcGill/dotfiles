@@ -31,6 +31,7 @@ vim.opt.ruler = false -- Disable the default ruler
 vim.opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 vim.opt.winminwidth = 5 -- Minimum window width
 vim.opt.scrolloff = 10 -- Minimum of 10 lines above / below cursor
+vim.opt.winborder = "single"
 
 -- Smart search settings
 vim.opt.ignorecase = true -- Case insensitive search
