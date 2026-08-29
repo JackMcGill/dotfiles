@@ -1,7 +1,9 @@
 vim.pack.add({
+	{ src = "https://github.com/nvim-mini/mini.icons" }, -- icons for the picker
 	{ src = "https://github.com/folke/snacks.nvim" },
 })
 
+require("mini.icons").setup()
 require("snacks").setup({
 	explorer = {
 		enabled = true,
