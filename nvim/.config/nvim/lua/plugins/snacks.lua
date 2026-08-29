@@ -3,9 +3,16 @@ vim.pack.add({
 })
 
 require("snacks").setup({
+	explorer = {
+		enabled = true,
+		replace_netrw = false,
+	},
 	picker = {
 		enabled = true,
 		sources = {
+			explorer = {
+				git_status = true,
+			},
 			files = {
 				hidden = true,
 			},

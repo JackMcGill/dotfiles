@@ -22,6 +22,7 @@ TODO:
     - [x] mason
     - [x] completions
     - [x] fuzzy finder
+    - [x] filetree
     - [ ] which key
     - [x] confom
     - [ ] git integration
@@ -34,4 +35,10 @@ TODO:
   - [ ] setup tab for autocomplete
   - [ ] comment statusline so i can remember what it all does
 - TMUX config
-  - [ ] read some docs
+  - [x] read some docs
+  - [x] change prefix to ctrl space
+  - [ ] use vim bindings to jump between panes
+  - [x] turn mouse on
+  - [x] index from 1
+  - [ ] statusbar at the top?
+  - [ ] change colour of statusbar?

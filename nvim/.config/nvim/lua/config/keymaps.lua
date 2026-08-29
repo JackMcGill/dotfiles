@@ -20,7 +20,10 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 -- ═══════════════════════════════════════════════════════════
 
 -- Open netrw
-map("n", "<leader>e", vim.cmd.Ex, { desc = "Open file explorer" })
+map("n", "<leader>E", vim.cmd.Ex, { desc = "Open file explorer" })
+map("n", "<leader>e", function()
+	Snacks.explorer()
+end, { desc = "Open file explorer" })
 
 -- Quick switch to last edited file
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
