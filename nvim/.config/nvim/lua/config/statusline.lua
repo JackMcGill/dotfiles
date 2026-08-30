@@ -1,91 +1,3 @@
-local palettes = {
-	tokyonight = {
-		mode = {
-			n = "#7AA2F7",
-			i = "#9ECE6A",
-			v = "#BB9AF7",
-			V = "#BB9AF7",
-			["\22"] = "#BB9AF7",
-			c = "#E0AF68",
-			t = "#2AC3DE",
-			R = "#F7768E",
-			s = "#BB9AF7",
-			S = "#BB9AF7",
-			["\19"] = "#BB9AF7",
-		},
-
-		project = {
-			fg = "#A9B1D6",
-			bg = "#292E42",
-		},
-
-		git = {
-			fg = "#73DACA",
-			bg = "#1F2335",
-		},
-
-		text = "#C0CAF5",
-	},
-
-	kanagawa = {
-		mode = {
-			n = "#7E9CD8",
-			i = "#98BB6C",
-			v = "#957FB8",
-			V = "#957FB8",
-			["\22"] = "#957FB8",
-			c = "#E6C384",
-			t = "#7AA89F",
-			R = "#E82424",
-			s = "#957FB8",
-			S = "#957FB8",
-			["\19"] = "#957FB8",
-		},
-
-		project = {
-			fg = "#727169",
-			bg = "#1F1F28",
-		},
-
-		git = {
-			fg = "#6A9589",
-			bg = "#1F1F28",
-		},
-
-		text = "#DCD7BA",
-	},
-}
-
-local function setup_statusline_highlights()
-	local theme = vim.g.colors_name or "tokyonight"
-	local palette = palettes[theme] or palettes.tokyonight
-
-	vim.api.nvim_set_hl(0, "StlMode", {
-		fg = palette.text,
-		bg = palette.mode[vim.fn.mode()] or palette.mode.n,
-	})
-
-	vim.api.nvim_set_hl(0, "StlProject", {
-		fg = palette.project.fg,
-		bg = palette.project.bg,
-	})
-
-	vim.api.nvim_set_hl(0, "StlGit", {
-		fg = palette.git.fg,
-		bg = palette.git.bg,
-	})
-end
-
-setup_statusline_highlights()
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-	callback = setup_statusline_highlights,
-})
-
-vim.api.nvim_create_autocmd("ModeChanged", {
-	callback = setup_statusline_highlights,
-})
-
 local modes = {
 	n = "NORMAL",
 	i = "INSERT",
@@ -99,6 +11,52 @@ local modes = {
 	S = "S-LINE",
 	["\19"] = "S-BLOCK",
 }
+
+local mode_colours = {
+	n = "#61AFEF",
+	i = "#98C379",
+	v = "#C678DD",
+	V = "#C678DD",
+	["\22"] = "#C678DD",
+	c = "#E5C07B",
+	t = "#56B6C2",
+	R = "#E06C75",
+	s = "#C678DD",
+	S = "#C678DD",
+	["\19"] = "#C678DD",
+}
+
+local function setup_statusline_highlights()
+	-- Entire statusline
+	vim.api.nvim_set_hl(0, "StatusLine", {
+		fg = "#ABB2BF",
+		bg = "#181716",
+	})
+
+	-- Current mode
+	vim.api.nvim_set_hl(0, "StlMode", {
+		fg = "#282C34",
+		bg = mode_colours[vim.fn.mode()] or mode_colours.n,
+	})
+
+	-- Project root
+	vim.api.nvim_set_hl(0, "StlProject", {
+		fg = "#E5C07B",
+		-- bg = "#181716",
+	})
+
+	-- Git branch
+	vim.api.nvim_set_hl(0, "StlGit", {
+		fg = "#98C379",
+		-- bg = "#181716",
+	})
+end
+
+setup_statusline_highlights()
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+	callback = setup_statusline_highlights,
+})
 
 local function update_statusline()
 	if vim.bo.filetype == "netrw" then
