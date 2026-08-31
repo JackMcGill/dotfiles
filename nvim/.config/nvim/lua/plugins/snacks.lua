@@ -9,6 +9,9 @@ require("snacks").setup({
 		enabled = true,
 		replace_netrw = true,
 	},
+	indent = {
+		enabled = true,
+	},
 	picker = {
 		enabled = true,
 		sources = {
@@ -24,9 +27,6 @@ require("snacks").setup({
 				enabled = true,
 			},
 		},
-	},
-	indent = {
-		enabled = true,
 	},
 })
 
