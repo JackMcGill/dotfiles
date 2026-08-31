@@ -37,7 +37,7 @@ TODO:
 - TMUX config
   - [x] read some docs
   - [x] change prefix to ctrl space
-  - [ ] use vim bindings to jump between panes
+  - [x] use vim bindings to jump between panes
   - [x] turn mouse on
   - [x] index from 1
   - [ ] statusbar at the top?
