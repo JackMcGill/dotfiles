@@ -1,5 +1,5 @@
 require("plugins.snacks")
 require("plugins.mason")
 require("plugins.blink-cmp")
-require("plugins.gitsigns")
+require("plugins.git")
 require("plugins.conform")
