@@ -52,6 +52,21 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
+-- Resize windows / split width
+local function toggle_split_width()
+	local current = vim.api.nvim_win_get_width(0)
+	local other = vim.api.nvim_win_get_width(vim.fn.win_getid(vim.fn.winnr("#")))
+
+	if current > other then
+		vim.cmd("wincmd =")
+	else
+		vim.cmd("vertical resize " .. math.floor((current + other) * 0.8))
+	end
+end
+vim.keymap.set("n", "<leader>tw", toggle_split_width, { -- not sold on this shortcut, will see how it goes
+	desc = "Toggle split width",
+})
+
 -- ═══════════════════════════════════════════════════════════
 -- TEXT EDITING
 -- ═══════════════════════════════════════════════════════════
@@ -63,6 +78,10 @@ map("i", "(", "()<left>")
 map("i", "[", "[]<left>")
 map("i", "{", "{}<left>")
 map("i", "<", "<><left>")
+
+-- Move cursor while in insert mode (useful with auto-close pairs)
+vim.keymap.set("i", "<C-h>", "<Left>")
+vim.keymap.set("i", "<C-l>", "<Right>")
 
 -- Smart undo break-points (create undo points at logical stops)
 map("i", ",", ",<c-g>u")

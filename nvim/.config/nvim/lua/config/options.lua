@@ -10,7 +10,7 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 
 -- File
 vim.o.undofile = true
-vim.o.autoread = true
+vim.o.autoread = true -- Rereads a file when a change is detected (from outside neovim)
 vim.opt.backupcopy = "yes"
 
 -- Visual
