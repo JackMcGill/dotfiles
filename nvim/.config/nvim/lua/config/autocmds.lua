@@ -21,10 +21,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Automatically reload buffers when files are modified externally.
-vim.opt.autoread = true
-
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
-	callback = function()
-		vim.cmd("checktime")
-	end,
-})
+vim.fn.timer_start(1000, function()
+	vim.cmd("checktime")
+end, { ["repeat"] = -1 })

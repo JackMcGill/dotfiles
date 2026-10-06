@@ -1,7 +1,6 @@
-
 -- LSP keybinds
 local function augroup(name)
-  return vim.api.nvim_create_augroup("user_" .. name, {clear = true})
+	return vim.api.nvim_create_augroup("user_" .. name, { clear = true })
 end
 
 local default_keymaps = {
@@ -50,4 +49,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-vim.lsp.enable({'lua_ls', 'eslint', 'vtsls', 'tinymist'})
+vim.lsp.enable({
+	"basedpyright",
+	"cssls.lua",
+	"eslint",
+	"gopls",
+	"lua_ls",
+	"tinymist",
+	"vtsls",
+})
